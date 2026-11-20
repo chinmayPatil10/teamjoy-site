@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support · Teamjoy</title>
+  <meta name="description" content="Help with Teamjoy: getting started, common questions and how to reach us.">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=14">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Teamjoy home"><img src="assets/symbol.svg" alt="">eamjoy</a>
+    <nav class="nav" aria-label="Main"><a href="./#what">What it does</a><a href="./#pilot">The pilot</a><a href="support.html">Support</a></nav>
+  </div>
+</header>
+<main class="wrap doc">
+
+<p class="eyebrow">Support</p>
+<h1>How can we help?</h1>
+<p class="lead">Most answers are below. If yours isn't, <a href="#contact">write us a message</a> and a person will reply within 2 business days.</p>
+
+<h2>Getting started</h2>
+<ul>
+  <li><strong>Install:</strong> use the install link you were sent when your pilot application was approved, from a Slack account with a work email address.</li>
+  <li><strong>Set up your team:</strong> open Teamjoy in Slack and use the Home tab to add members, choose a channel and set quiet hours.</li>
+  <li><strong>Your own details:</strong> type <code>/team me</code> to add a birthday and preferences.</li>
+  <li><strong>Ask for things:</strong> message Teamjoy, mention it in a channel, or type <code>/team</code> followed by a sentence.</li>
+</ul>
+
+<h2>Common questions</h2>
+<h3 style="margin-top:22px">Why was my install refused?</h3>
+<p>Teamjoy is for teams at work, so it asks for a Slack account that uses a company email address.</p>
+<h3 style="margin-top:22px">Why didn't Teamjoy post my message to the channel?</h3>
+<p>Anything that goes to the whole team waits for the manager to press Approve.</p>
+<h3 style="margin-top:22px">Why didn't I get a reminder?</h3>
+<p>Teamjoy sends one reminder per person per thing, and holds messages during your team's quiet hours.</p>
+<h3 style="margin-top:22px">Can Teamjoy take payments for a gift?</h3>
+<p>No. People pay the organiser directly, through the organiser's own PayPal, Venmo, Cash App, Zelle or other link.</p>
+<h3 style="margin-top:22px">How do I remove Teamjoy?</h3>
+<p>Remove the app from your Slack workspace's app settings. Your team's data is then deleted.</p>
+
+<h2 id="contact">Write us a message</h2>
+<p>Tell us what you need and where to reply. A person reads every message.</p>
+<form class="apply" id="contact-form" data-endpoint="/contact" data-done="Thank you! Your message is on its way. We'll reply within 2 business days." data-event="support-message" novalidate>
+  <label>Your name <input name="name" autocomplete="name" maxlength="80"></label>
+  <label>Your email<input name="email" type="email" autocomplete="email" required maxlength="120" placeholder="so we can reply"></label>
+  <label class="wide">Your message<textarea name="message" rows="5" required minlength="5" maxlength="3000"></textarea></label>
+  <label class="hp" aria-hidden="true">Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label>
+  <button class="btn btn-primary wide" type="submit">Send message</button>
+  <p class="form-note wide" role="status" aria-live="polite"></p>
+</form>
+
+<h2>Privacy</h2>
+<p>See <a href="privacy.html">what Teamjoy stores and what it never stores</a>.</p>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Teamjoy</span>
+    <nav aria-label="Footer"><a href="pilot-terms.html">Pilot terms</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav>
+  </div>
+</footer>
+<script src="site.js?v=13"></script>
+</body>
+</html>

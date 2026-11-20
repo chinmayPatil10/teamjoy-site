@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teamjoy: the teammate in Slack that runs team life</title>
+  <meta name="description" content="Teamjoy is a shared AI teammate in Slack. It plans team events, remembers birthdays, runs Secret Santa and group gifts, suggests games and tracks the budget. Others remind. Teamjoy gets it done.">
+  <meta property="og:title" content="Teamjoy: join the Founding Teams pilot">
+  <meta property="og:description" content="Events, celebrations, Secret Santa, game ideas, group gifts and the team budget, handled in Slack.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://teamjoy.team/">
+  <link rel="canonical" href="https://teamjoy.team/">
+  <meta property="og:image" content="https://teamjoy.team/assets/social-card.png">
+  <meta name="twitter:image" content="https://teamjoy.team/assets/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Teamjoy: the teammate in Slack that runs team life">
+  <meta name="twitter:description" content="Events, celebrations, group gifts and the team budget, handled in Slack.">
+  <!-- These addresses are for the Cloudflare site. Change them when the site moves to its own domain. -->
+  <meta name="theme-color" content="#F2467E">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css?v=14">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Teamjoy home"><img src="assets/symbol.svg" alt="">eamjoy</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#what">What it does</a>
+      <a href="#how">How it works</a>
+      <a href="#pilot">The pilot</a>
+      <a href="#faq">Questions</a>
+      <a class="btn btn-primary btn-small" href="#apply" data-track="nav-apply">Join the pilot</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">For team managers who live in Slack</p>
+        <h1>Team life, <span>handled</span> in Slack.</h1>
+        <p class="lead">Teamjoy plans the dinners, remembers the birthdays, runs Secret Santa, picks the games and watches the budget. You just ask.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#apply" data-track="hero-apply">Apply for the pilot</a>
+          <a class="btn btn-ghost" href="#how" data-track="hero-demo">Watch it work</a>
+        </div>
+        <p class="fineprint">Free for 60 days · 15 founding teams · needs a Slack account with a work email</p>
+        <p class="tagline">Others remind. Teamjoy gets it done.</p>
+      </div>
+      <div class="stage" id="stage">
+        <img class="poster" draggable="false" src="assets/hero.webp" width="900" height="900" fetchpriority="high"
+             alt="The Teamjoy mascot cheering, with a calendar, a cake, a gift, coins, a map pin, a chat bubble and balloons floating round it">
+        <canvas id="scene" aria-hidden="true"></canvas>
+        <span class="hint" id="hint">Click me for a cheer</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="what">
+    <div class="wrap center">
+      <p class="eyebrow">What it does</p>
+      <h2>The jobs nobody has time for</h2>
+      <p class="lead">Teamjoy takes them off the manager's plate and keeps the whole team in the loop.</p>
+      <div class="grid-4">
+        <article class="tilt reveal">
+          <div class="icon i-pink">📅</div>
+          <h3>Events</h3>
+          <p>Polls the team for a date, suggests places nearby, posts the plan and tracks who's coming.</p>
+        </article>
+        <article class="tilt reveal">
+          <div class="icon i-sun">🎂</div>
+          <h3>Celebrations</h3>
+          <p>Birthdays, work anniversaries and welcomes, ready to post the moment you approve.</p>
+        </article>
+        <article class="tilt reveal">
+          <div class="icon i-teal">🎁</div>
+          <h3>Group gifts</h3>
+          <p>A private collection the person it's for never sees, with one gentle reminder and a tally.</p>
+        </article>
+        <article class="tilt reveal">
+          <div class="icon i-plum">💰</div>
+          <h3>Budget</h3>
+          <p>Set it once a quarter. See what's left, and get a warning before a plan goes over.</p>
+        </article>
+      </div>
+      <p class="eyebrow new-row">New: ideas, not just reminders</p>
+      <div class="grid-3">
+        <article class="tilt reveal">
+          <div class="icon i-sun">💡</div>
+          <h3>Seasonal ideas</h3>
+          <p>A few weeks ahead, a private nudge to the manager: "Year-end party coming up. Want me to plan it?"</p>
+        </article>
+        <article class="tilt reveal">
+          <div class="icon i-teal">🎮</div>
+          <h3>Online games</h3>
+          <p>Ask for happy-hour games and get links to ones your team can play together online, free and paid.</p>
+        </article>
+        <article class="tilt reveal">
+          <div class="icon i-pink">🎅</div>
+          <h3>Secret Santa</h3>
+          <p>People join with a tap. Teamjoy draws the names and tells each person privately. Nobody sees the list.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="wrap demo">
+    <div class="how-head">
+      <p class="eyebrow" style="color: var(--sun)">How it works</p>
+      <h2>Say it like you'd say it to a colleague</h2>
+      <p class="lead">No dashboards to learn. Message Teamjoy, tap a button, done. Pick anything on the list to watch it work.</p>
+    </div>
+    <div class="tour" id="tour">
+      <ol class="tour-list" aria-label="Choose what to watch">
+          <li><button type="button" class="tour-item on" data-clip="setup" aria-pressed="true"><span class="n">1</span><span class="t"><strong>Set up</strong><small>Add it to Slack, pick a channel and quiet hours</small></span><span class="tick" aria-hidden="true">✓</span></button></li>
+          <li><button type="button" class="tour-item" data-clip="celebrations" aria-pressed="false"><span class="n">2</span><span class="t"><strong>Celebrations</strong><small>Birthdays and anniversaries, posted when you approve</small></span><span class="tick" aria-hidden="true">✓</span></button></li>
+          <li><button type="button" class="tour-item" data-clip="events" aria-pressed="false"><span class="n">3</span><span class="t"><strong>Team events</strong><small>A date poll, places nearby, the plan and who's coming</small></span><span class="tick" aria-hidden="true">✓</span></button></li>
+          <li><button type="button" class="tour-item" data-clip="games" aria-pressed="false"><span class="n">4</span><span class="t"><strong>Online games</strong><small>Games to play together online, free and paid</small></span><span class="tick" aria-hidden="true">✓</span></button></li>
+          <li><button type="button" class="tour-item" data-clip="ideas" aria-pressed="false"><span class="n">5</span><span class="t"><strong>Seasonal ideas</strong><small>A private nudge about what's worth planning next</small></span><span class="tick" aria-hidden="true">✓</span></button></li>
+          <li><button type="button" class="tour-item" data-clip="santa" aria-pressed="false"><span class="n">6</span><span class="t"><strong>Secret Santa</strong><small>A private name draw. Nobody sees the list</small></span><span class="tick" aria-hidden="true">✓</span></button></li>
+          <li><button type="button" class="tour-item" data-clip="gifts" aria-pressed="false"><span class="n">7</span><span class="t"><strong>Group gifts</strong><small>A private collection the recipient never sees</small></span><span class="tick" aria-hidden="true">✓</span></button></li>
+          <li><button type="button" class="tour-item" data-clip="budget" aria-pressed="false"><span class="n">8</span><span class="t"><strong>Team budget</strong><small>A warning before a plan goes over</small></span><span class="tick" aria-hidden="true">✓</span></button></li>
+      </ol>
+      <div class="tour-screen">
+        <video id="tour-video" controls muted playsinline preload="none" poster="assets/clips/setup.jpg?v=2" width="1080" height="720"
+               aria-label="A short animated walkthrough of the chosen feature, in Slack, with an invented team">
+          <source src="assets/clips/setup.mp4?v=2" type="video/mp4">
+        </video>
+        <div class="tour-caption" aria-live="polite"><strong id="tour-title">Add to Slack, about a minute</strong><span id="tour-text">Install takes about a minute, from a work account.</span></div>
+        <p class="tour-note">An animated walkthrough with an invented team, no sound. <a href="assets/demo.mp4?v=2">Watch everything in two minutes</a></p>
+      </div>
+    </div>
+    <ol class="steps steps-row">
+      <li><b>1</b><div><strong>Apply, then add it to Slack</strong><span>From your work account. Founding Teams get it free for 60 days.</span></div></li>
+      <li><b>2</b><div><strong>Tell it about your team</strong><span>Who's on it, which channel to post in, and when to stay quiet.</span></div></li>
+      <li><b>3</b><div><strong>Just ask</strong><span>"Plan a team dinner." Teamjoy does the chasing and asks you before anything goes out.</span></div></li>
+    </ol>
+  </section>
+
+  <section id="pilot">
+    <div class="wrap center">
+      <p class="eyebrow">Founding Teams pilot</p>
+      <h2>Free for 60 days, for 15 teams</h2>
+      <p class="lead">We're looking for 15 teams to use Teamjoy for real and tell us what's missing. In return you get it free for 60 days and a direct line to the people who build it.</p>
+      <div class="offer" style="text-align: left">
+        <div class="offer-main">
+          <span class="badge">15 spots</span>
+          <h3>What you get</h3>
+          <ul>
+            <li>Everything Teamjoy does: events, celebrations, Secret Santa, game ideas, group gifts and the budget</li>
+            <li>60 days free, for your whole team</li>
+            <li>Help setting up, from the people who built it</li>
+            <li>A say in what gets built next</li>
+          </ul>
+        </div>
+        <div class="offer-side">
+          <h3>What we ask</h3>
+          <ul>
+            <li>A team of 5 to 40 people that uses Slack every day</li>
+            <li>Honest feedback: a short weekly check-in or a shared channel</li>
+          </ul>
+          <p class="after">After 60 days it's <strong>$9 a month per team</strong>, or $7 a month billed yearly, only if you decide to keep it. <a href="pilot-terms.html">Pilot terms</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply">
+    <div class="wrap apply-wrap">
+      <div>
+        <p class="eyebrow">Apply</p>
+        <h2>Tell us about your team</h2>
+        <p class="lead">It takes a minute. A person reads every application and replies within 2 business days with your install link.</p>
+        <p class="fineprint">Teamjoy installs from a Slack account with a work email address.</p>
+      </div>
+      <form class="apply" id="apply-form" data-endpoint="/pilot/apply" data-done="Thank you! Your application is in. You'll hear from us within 2 business days." data-event="pilot-application" novalidate>
+        <label>Your name<input name="name" autocomplete="name" required maxlength="80"></label>
+        <label>Work email<input name="email" type="email" autocomplete="email" required maxlength="120" placeholder="you@company.com"></label>
+        <label>Company<input name="company" autocomplete="organization" required maxlength="80"></label>
+        <label>Team size
+          <select name="team_size" required>
+            <option value="">Choose…</option><option>Under 5</option><option>5 to 10</option><option>11 to 20</option><option>21 to 40</option><option>Over 40</option>
+          </select>
+        </label>
+        <label class="wide">What takes most of your team-life time today?<textarea name="pain" rows="3" maxlength="500" placeholder="For example: remembering birthdays, planning the team dinner, chasing gift money"></textarea></label>
+        <label class="wide"><span>Slack workspace address <span class="optional">(optional)</span></span><input name="workspace" maxlength="120" placeholder="yourteam.slack.com"></label>
+        <label class="hp" aria-hidden="true">Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label>
+        <button class="btn btn-primary wide" type="submit">Apply for the pilot</button>
+        <p class="form-note wide" id="apply-note" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap center">
+      <p class="eyebrow">Private by design</p>
+      <h2>Built to know as little as possible</h2>
+      <p class="lead">A teammate people trust has to keep things to itself. These rules are built into the product, not just promised.</p>
+      <div class="trust-grid" style="text-align: left">
+        <div class="trust reveal"><h3>You approve what goes out</h3><p>Nothing is posted to the team, and nothing involving money happens, until the manager says yes.</p></div>
+        <div class="trust reveal"><h3>Messages aren't stored</h3><p>Teamjoy reads a conversation only to answer it. Slack messages and calendars are never kept.</p></div>
+        <div class="trust reveal"><h3>Needs stay anonymous</h3><p>Dietary and accessibility needs reach an event's organiser as counts, never with names.</p></div>
+        <div class="trust reveal"><h3>Surprises stay surprises</h3><p>The person a gift is for is never messaged about it and can't see it.</p></div>
+        <div class="trust reveal"><h3>No nagging</h3><p>One reminder per person per thing, and none during your team's quiet hours.</p></div>
+        <div class="trust reveal"><h3>Birthdays without the year</h3><p>Day and month only. Teamjoy never asks how old anyone is.</p></div>
+        <div class="trust reveal"><h3>Secret Santa stays secret</h3><p>Names are drawn where nobody can list them, the manager included, and deleted the day after the swap.</p></div>
+        <div class="trust reveal"><h3>Your holidays, your call</h3><p>Teamjoy never works out which holidays a team marks from who is on it. The manager chooses.</p></div>
+        <div class="trust reveal"><h3>No kickbacks</h3><p>Game suggestions link to other companies' sites. Teamjoy isn't paid by any of them.</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="faq">
+    <div class="wrap center">
+      <p class="eyebrow">Questions</p>
+      <h2>What managers ask first</h2>
+      <div class="faq" style="text-align: left">
+        <details class="reveal"><summary>Does Teamjoy read my team's messages?</summary><p>Only the conversation it is asked to answer, at that moment, and it keeps none of it. It does not read your other channels. <a href="privacy.html">What Teamjoy stores</a></p></details>
+        <details class="reveal"><summary>Does it hold our money?</summary><p>No. For a group gift, people pay the organiser directly through the organiser's own PayPal, Venmo, Cash App or Zelle. Teamjoy only keeps the tally.</p></details>
+        <details class="reveal"><summary>Can it post to my team without asking me?</summary><p>No. Anything that goes to the whole team waits for you to press Approve.</p></details>
+        <details class="reveal"><summary>Who sees dietary and accessibility needs?</summary><p>Only the organiser of an event you say you're coming to, as counts without names. In a small team a count can still point to one person, so share only what you're comfortable with.</p></details>
+        <details class="reveal"><summary>Who can see the Secret Santa pairs?</summary><p>Nobody. Each person is told privately who they are buying for. The manager can't see the list, and it is deleted the day after the swap.</p></details>
+        <details class="reveal"><summary>Does Teamjoy assume which holidays we celebrate?</summary><p>No. It suggests work moments such as a year-end party or a quarterly happy hour. Religious and national holidays are off until the manager switches them on.</p></details>
+        <details class="reveal"><summary>Are the games you suggest free?</summary><p>Some are free and some are paid, and each is labelled. They are on other companies' websites, so the price is theirs. Teamjoy isn't paid to suggest any of them.</p></details>
+        <details class="reveal"><summary>What happens after 60 days?</summary><p>You choose. Keep Teamjoy for $9 a month per team, or stop, and nothing is charged. <a href="pilot-terms.html">Pilot terms</a></p></details>
+        <details class="reveal"><summary>How do I remove it?</summary><p>Remove the app in your Slack workspace's settings. Your team's data is then deleted. <a href="support.html">More help</a></p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="ideas">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow">Ideas on tap</p>
+        <h2>Stuck for what to do? Teamjoy has ideas.</h2>
+        <p class="lead">It notices what's coming up and suggests it to you first. And when you need a game for Friday, just ask.</p>
+      </div>
+      <div class="ideas-grid">
+        <div class="idea-card reveal">
+          <p class="idea-label">It comes to you <span>only the manager sees this</span></p>
+          <div class="msg bot">
+            <div class="who"><img src="assets/favicon.svg" alt="">Teamjoy <span class="app">APP</span></div>
+            <strong>🎅 Secret Santa</strong> (Wednesday, 16 December)
+            <p class="msg-text">Secret Santa season is coming. Want me to set one up? I'll draw the names and tell each person privately.</p>
+            <div class="chips"><span class="chip go">✨ Plan it</span><span class="chip">Not this year</span><span class="chip">Stop suggesting this</span></div>
+          </div>
+          <ul class="idea-points">
+            <li>One suggestion per occasion, never during quiet hours</li>
+            <li>Year-end party, quarterly happy hour, team anniversary and more</li>
+            <li>Holidays are off until you switch them on. Teamjoy never guesses what your team celebrates</li>
+          </ul>
+        </div>
+        <div class="idea-card reveal">
+          <p class="idea-label">Or you ask <span>anyone on the team can</span></p>
+          <div class="msg you">8 of us on a call Friday. Suggest some online games</div>
+          <div class="msg bot">
+            <div class="who"><img src="assets/favicon.svg" alt="">Teamjoy <span class="app">APP</span></div>
+            <strong>Free</strong>
+            <ul class="game-list">
+              <li><b>skribbl</b> One person draws, everyone races to guess</li>
+              <li><b>Gartic Phone</b> The telephone game, with drawings</li>
+              <li><b>Codenames Online</b> One-word clues, two teams</li>
+            </ul>
+            <strong>Paid</strong>
+            <ul class="game-list">
+              <li><b>Jackbox Games</b> One person buys a pack, everyone joins free</li>
+            </ul>
+          </div>
+          <ul class="idea-points">
+            <li>Each game is a link to its own website</li>
+            <li>Picked for your group size and the time you have</li>
+            <li>In the office instead? Ask for games for the room</li>
+          </ul>
+        </div>
+      </div>
+      <p class="small-print center">The games are on other companies' websites. Teamjoy isn't connected to them and isn't paid to suggest them. Game names belong to their owners.</p>
+    </div>
+  </section>
+
+  <section id="compare">
+    <div class="wrap center">
+      <p class="eyebrow">Teamjoy and the alternatives</p>
+      <h2>How Teamjoy compares</h2>
+      <p class="lead">Other apps each handle one piece of team life. Teamjoy runs the whole thing, at one flat price.</p>
+      <p class="swipe-hint" aria-hidden="true">Swipe to compare &rarr;</p>
+      <div class="table-scroll">
+        <table class="compare">
+          <thead>
+            <tr><th scope="col"></th><th scope="col" class="us">Teamjoy</th><th scope="col">BirthdayBot</th><th scope="col">Donut</th><th scope="col">Polly</th><th scope="col">HeyTaco</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Birthdays and work anniversaries</th><td class="us yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">Not listed</td><td class="yes">Yes, on Deluxe</td></tr>
+            <tr><th scope="row">Team events: date poll, plan and who's coming</th><td class="us yes">Yes</td><td class="no">Not listed</td><td class="no">Not listed</td><td>Polls only</td><td class="no">Not listed</td></tr>
+            <tr><th scope="row">Venue suggestions with photos and maps</th><td class="us yes">Yes</td><td class="no">Not listed</td><td class="no">Not listed</td><td class="no">Not listed</td><td class="no">Not listed</td></tr>
+            <tr><th scope="row">Group gift collections from the team</th><td class="us yes">Yes</td><td>Gift cards and wishlists</td><td>Gift card rewards</td><td class="no">Not listed</td><td>Gift cards, on Deluxe</td></tr>
+            <tr><th scope="row">Team budget and expenses</th><td class="us yes">Yes</td><td class="no">Not listed</td><td class="no">Not listed</td><td class="no">Not listed</td><td class="no">Not listed</td></tr>
+            <tr><th scope="row">Secret Santa with a private name draw</th><td class="us yes">Yes</td><td class="no">Not listed</td><td class="no">Not listed</td><td class="no">Not listed</td><td class="no">Not listed</td></tr>
+            <tr><th scope="row">Games for team socials</th><td class="us yes">Yes, links to online games</td><td class="no">Not listed</td><td>Conversation topics</td><td class="yes">Yes, built-in trivia and icebreakers</td><td>Icebreakers, in a paid add-on</td></tr>
+            <tr><th scope="row">Holidays and seasonal moments</th><td class="us yes">Suggests what to plan</td><td>Holiday post templates</td><td>Automated holiday messages</td><td class="no">Not listed</td><td class="no">Not listed</td></tr>
+            <tr><th scope="row">How you pay</th><td class="us">Flat, per team</td><td>By number of people</td><td>By number of people</td><td>Per licence</td><td>Per person</td></tr>
+            <tr class="price-row"><th scope="row">Monthly price for a team of 15</th><td class="us"><strong>$9</strong></td><td>$15 to $30</td><td>From $74</td><td>$19 per licence</td><td>$45 to $75</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small-print">Prices and the first five rows were taken from each company's public pricing page on 17 November 2026. The Secret Santa, games and holidays rows were taken from each company's own website on 19 November 2026. "Not listed" means we did not find the feature mentioned there; it may still exist. BirthdayBot: Standard and Pro, 11 to 20 people, billed monthly. Donut: Standard, billed yearly. Polly: Basic. HeyTaco: Classic and Deluxe at $3 and $5 a person. Product names belong to their owners.</p>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <div class="box">
+        <h2>Be one of the 15 Founding Teams</h2>
+        <p class="lead">Setup takes about a minute, and your next team dinner plans itself.</p>
+        <a class="btn btn-primary" href="#apply" data-track="final-apply">Apply for the pilot</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Teamjoy</span>
+    <nav aria-label="Footer"><a href="pilot-terms.html">Pilot terms</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav>
+  </div>
+</footer>
+
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" } }
+</script>
+<script src="site.js?v=13"></script>
+<script type="module" src="scene.js?v=13"></script>
+</body>
+</html>

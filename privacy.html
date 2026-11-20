@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy · Teamjoy</title>
+  <meta name="description" content="What Teamjoy stores, what it never stores, and who can see what.">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=14">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Teamjoy home"><img src="assets/symbol.svg" alt="">eamjoy</a>
+    <nav class="nav" aria-label="Main"><a href="./#what">What it does</a><a href="./#pilot">The pilot</a><a href="support.html">Support</a></nav>
+  </div>
+</header>
+<main class="wrap doc">
+
+<p class="eyebrow">Privacy</p>
+<h1>What Teamjoy knows, and what it doesn't</h1>
+<p class="lead">Teamjoy is built to store as little as it can. This page says plainly what that means.</p>
+<p>Teamjoy is the company that makes and runs the Teamjoy app. "We" on this page means Teamjoy. To reach us about anything here, <a href="support.html#contact">write us a message</a>.</p>
+
+<h2>What Teamjoy stores</h2>
+<ul>
+  <li>Your Slack workspace and team: their Slack IDs, the team name, the channel you choose and your quiet hours.</li>
+  <li>Team members: Slack user IDs, time zone, and a start date if the manager adds one.</li>
+  <li>What a member chooses to add about themselves: a birthday as day and month only, dietary and accessibility needs, whether they drink alcohol, and whether they want public celebrations.</li>
+  <li>Events, votes and replies; gift collections and who has marked their share as paid; the budget and expenses.</li>
+  <li>The Slack access token for your workspace, kept in an encrypted vault.</li>
+</ul>
+
+<h2>If you apply for the pilot or write to us</h2>
+<p>What you type into the application form or the support form (such as your name, email address, company and your message) is passed straight to the Teamjoy team, by private message and email, so we can reply to you. It is not added to Teamjoy's product database and is not used for anything else.</p>
+
+<h2>What Teamjoy never stores</h2>
+<ul>
+  <li>Slack messages. Teamjoy reads a conversation only at the moment it answers, and keeps none of it.</li>
+  <li>Calendars.</li>
+  <li>The year anyone was born.</li>
+  <li>Payment details. Teamjoy holds no money: gift contributions go straight to the organiser through their own payment link.</li>
+</ul>
+
+<h2>Who can see what</h2>
+<ul>
+  <li>Dietary and accessibility needs are shown only to the organiser of an event, as counts without names. The manager cannot see them.</li>
+  <li>A gift collection is never shown to the person it is for. Who has paid is shown only to the organiser.</li>
+  <li>The budget is visible to the manager only.</li>
+  <li>Each company's data is kept apart from every other company's.</li>
+</ul>
+
+<h2>Other services Teamjoy uses</h2>
+<ul>
+  <li><strong>Slack</strong>, to send and receive messages.</li>
+  <li><strong>Anthropic (Claude)</strong>, to understand plain-language requests. It receives the recent messages of that one conversation and the facts needed to answer. Dietary and accessibility needs are never sent.</li>
+  <li><strong>Google Places</strong>, to suggest venues. It receives the area, the kind of place and a price band. No names or messages.</li>
+  <li><strong>Supabase</strong> and <strong>Google Cloud</strong>, to store data and run the service.</li>
+</ul>
+
+<h2>Removing your data</h2>
+<p>A member can change or clear their own details at any time with <code>/team me</code>. In a gift exchange such as Secret Santa, who is buying for whom is kept only to tell each person their own match, cannot be listed by anyone including the manager, and is deleted the day after the exchange. When a member is removed from a team, their details are deleted within 7 days. When a workspace removes Teamjoy, its access to Slack ends at once and everything stored for that workspace is deleted after 30 days. To ask for deletion or a copy of your data, <a href="support.html#contact">write us a message</a>.</p>
+
+<h2>Changes</h2>
+<p>If this page changes in a way that matters, we will tell workspace managers in Slack before it takes effect.</p>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Teamjoy</span>
+    <nav aria-label="Footer"><a href="pilot-terms.html">Pilot terms</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav>
+  </div>
+</footer>
+</body>
+</html>
